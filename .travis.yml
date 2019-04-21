@@ -5,8 +5,8 @@ dist: trusty
 rvm:
   - 2.6.0
 
-before_script:
-  - gem install bundler:2.0.1 --no-rdoc --no-ri
+before_install:
+  - gem install bundler:2.0.1
 
 script: 
   - bundle exec rspec
