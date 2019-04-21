@@ -1,0 +1,2 @@
+class Issuegram::Chart
+end

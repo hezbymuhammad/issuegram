@@ -1,0 +1,10 @@
+language: ruby
+cache: bundler
+dist: trusty
+env:
+  - DEBUG=1
+
+script: "bundle exec rspec"
+
+rvm:
+  - 2.6.0
