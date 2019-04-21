@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 describe Issuegram::Config do
   context 'default values' do
     it '#api_url' do
@@ -20,7 +22,7 @@ describe Issuegram::Config do
   context 'using regular assigner' do
     before do
       Issuegram.config do
-	config.api_url = 'https://api.example.com'
+        config.api_url = 'https://api.example.com'
       end
     end
 

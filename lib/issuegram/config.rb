@@ -3,6 +3,10 @@
 require 'faraday'
 
 class Issuegram
+  # Usage example
+  #
+  # Issuegram::Config.new({api_url: '', ...})
+  #
   class Config
     AVAILABLE_KEYS = %i[api_url connection per_page state token].freeze
 
@@ -31,21 +35,21 @@ class Issuegram
 
     def inspect
       "<Issuegram::Config " +
-	AVAILABLE_KEYS.map {|key| "@#{key}=#{instance_variable_get("@#{key}")} " }.join.strip +
-	">"
+        AVAILABLE_KEYS.map {|key| "@#{key}=#{instance_variable_get("@#{key}")} " }.join.strip +
+        ">"
     end
 
     private
 
     def apply(hash)
       hash.each do |key, value|
-	unless AVAILABLE_KEYS.include?(key.to_s.to_sym)
-	  raise ArgumentError.new(
-	    "Unknown option #{key.inspect}, available keys: #{AVAILABLE_KEYS.map(&:inspect).join(', ')}"
-	  )
-	end
+        unless AVAILABLE_KEYS.include?(key.to_s.to_sym)
+          raise ArgumentError.new(
+            "Unknown option #{key.inspect}, available keys: #{AVAILABLE_KEYS.map(&:inspect).join(', ')}"
+          )
+        end
 
-	instance_variable_set("@#{key}", value)
+        instance_variable_set("@#{key}", value)
       end
     end
   end

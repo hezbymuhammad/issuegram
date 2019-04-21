@@ -6,6 +6,15 @@ require 'forwardable'
 loader = Zeitwerk::Loader.for_gem
 loader.setup
 
+# Usage example
+#
+# - Issuegram.new({api_url: '', ...})
+# - Issuegram.config { config.load_config('./path/to/config.yml') }
+# - Issuegram.config do
+#     config.api_url = ''
+#     ...
+#   end
+#
 class Issuegram
   class << self
     extend Forwardable
