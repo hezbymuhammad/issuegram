@@ -54,3 +54,4 @@ build-iPhoneSimulator/
 
 # ignore generated images
 /images/
+coverage

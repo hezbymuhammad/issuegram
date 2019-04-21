@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 require 'bundler/setup'
 
 $:.push(File.expand_path("../../lib", __FILE__))
